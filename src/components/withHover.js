@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export function withHover(UserComponent) {
 	return class WithHover extends React.Component {
@@ -24,6 +25,7 @@ export function withHover(UserComponent) {
 			return (
 				<div
 					className={UserComponent.name === "UserCard" ? "userCard" : ""}
+					// className="toto"
 					onMouseLeave={this.handleMouseLeave}
 					onMouseEnter={this.handleMouseEnter}
 				>

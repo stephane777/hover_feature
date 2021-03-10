@@ -19,15 +19,16 @@
 	flex-direction: column;
 	background: linear-gradient(hsl(199, 100%, 90%), #ffffff85);
 	width: 45%;
-	height: 12rem;
+	height: auto;
 	justify-content: space-between;
 	align-items: flex-start;
 	margin-top: 1rem;
 	padding: 1rem;
-}
-.userCard__header {
-	display: flex;
-	align-items: center;
+
+	&__header {
+		display: flex;
+		align-items: center;
+	}
 }
 
 .userCard img,
@@ -37,8 +38,8 @@
 }
 
 .user__title,
-.user__first,
-.user__last {
+.user__street,
+.user__city {
 	margin: 0 0.2rem;
 	font-size: 1.4rem;
 	font-weight: bold;
@@ -52,15 +53,16 @@
 	color: #fff;
 	z-index: 10;
 	padding: 12px;
-}
-.tooltip__arrow {
-	position: absolute;
-	top: -8px;
-	left: 12px;
-	width: 1rem;
-	height: 1rem;
-	background-color: #000;
-	transform: rotate(135deg);
+
+	&__arrow {
+		position: absolute;
+		top: -8px;
+		left: 12px;
+		width: 1rem;
+		height: 1rem;
+		background-color: #000;
+		transform: rotate(135deg);
+	}
 }
 .bold {
 	font-weight: bold;
@@ -70,5 +72,6 @@
 	justify-content: center;
 }
 .menu__link {
-	margin: 0 1rem;
+	margin: 0 3rem;
+	font-size: 2rem;
 }

@@ -1,0 +1,271 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test SNAPSHOT should match snapshot for hover true 1`] = `
+<div
+  className="userCard"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <div
+    id="488edda9-f042-434f-8162-e4dddf7055f5"
+    style={
+      Object {
+        "alignItems": "flex-start",
+        "display": "flex",
+        "flexDirection": "column",
+        "fontSize": "1.4rem",
+        "height": "100%",
+        "justifyContent": "space-around",
+        "overflow": "hidden",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="userCard__header u-margin-bottom-medium"
+    >
+      <img
+        alt="Mrs Emily Mortensen"
+        src="https://randomuser.me/api/portraits/thumb/women/78.jpg"
+      />
+      <span
+        className="user__title"
+      >
+        Mrs
+      </span>
+      <span
+        className="user__first"
+      >
+        Emily
+      </span>
+      <span
+        className="user__last"
+      >
+        Mortensen
+      </span>
+    </div>
+    <div
+      className="u-margin-bottom-medium"
+    >
+      <span
+        className="bold"
+      >
+        Age: 
+      </span>
+      <span>
+        31
+      </span>
+    </div>
+    <div
+      className="u-margin-bottom-medium"
+    >
+      <span
+        className="bold"
+      >
+        email: 
+      </span>
+      <span>
+        emily.mortensen@example.com
+      </span>
+    </div>
+    <div
+      className="u-margin-bottom-medium"
+    >
+      <span
+        className="bold"
+      >
+        Phone: 
+      </span>
+      <span>
+        94033936
+      </span>
+    </div>
+    <div
+      className="u-margin-bottom-medium"
+    >
+      <span
+        className="bold"
+      >
+        Street: 
+      </span>
+      <span>
+        8651 Tingstedet
+      </span>
+    </div>
+    <div
+      className="u-margin-bottom-medium"
+    >
+      <span
+        className="bold"
+      >
+        Postcode: 
+      </span>
+      <span>
+        98755
+      </span>
+    </div>
+    <div
+      className="u-margin-bottom-medium"
+    >
+      <span
+        className="bold"
+      >
+        City: 
+      </span>
+      <span>
+        Randers Nv
+      </span>
+    </div>
+    <div
+      className="tooltip"
+      data-testid="tooltip"
+      style={
+        Object {
+          "left": "0",
+          "position": "absolute",
+          "top": "6rem",
+        }
+      }
+    >
+      <div
+        className="tooltip__arrow"
+      />
+      <span
+        className="tooltip__title"
+      >
+        Mrs Emily Mortensen
+      </span>
+      <span
+        className="tooltip__street"
+      >
+        8651 Tingstedet
+      </span>
+      <span
+        className="tooltip__city"
+      >
+        Randers Nv
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test SNAPSHOT should match the snapshot for hover false 1`] = `
+<div
+  className="userCard"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <div
+    id="488edda9-f042-434f-8162-e4dddf7055f5"
+    style={
+      Object {
+        "alignItems": "flex-start",
+        "display": "flex",
+        "flexDirection": "column",
+        "fontSize": "1.4rem",
+        "height": "100%",
+        "justifyContent": "space-around",
+        "overflow": "hidden",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="userCard__header u-margin-bottom-medium"
+    >
+      <img
+        alt="Mrs Emily Mortensen"
+        src="https://randomuser.me/api/portraits/thumb/women/78.jpg"
+      />
+      <span
+        className="user__title"
+      >
+        Mrs
+      </span>
+      <span
+        className="user__first"
+      >
+        Emily
+      </span>
+      <span
+        className="user__last"
+      >
+        Mortensen
+      </span>
+    </div>
+    <div
+      className="u-margin-bottom-medium"
+    >
+      <span
+        className="bold"
+      >
+        Age: 
+      </span>
+      <span>
+        31
+      </span>
+    </div>
+    <div
+      className="u-margin-bottom-medium"
+    >
+      <span
+        className="bold"
+      >
+        email: 
+      </span>
+      <span>
+        emily.mortensen@example.com
+      </span>
+    </div>
+    <div
+      className="u-margin-bottom-medium"
+    >
+      <span
+        className="bold"
+      >
+        Phone: 
+      </span>
+      <span>
+        94033936
+      </span>
+    </div>
+    <div
+      className="u-margin-bottom-medium"
+    >
+      <span
+        className="bold"
+      >
+        Street: 
+      </span>
+      <span>
+        8651 Tingstedet
+      </span>
+    </div>
+    <div
+      className="u-margin-bottom-medium"
+    >
+      <span
+        className="bold"
+      >
+        Postcode: 
+      </span>
+      <span>
+        98755
+      </span>
+    </div>
+    <div
+      className="u-margin-bottom-medium"
+    >
+      <span
+        className="bold"
+      >
+        City: 
+      </span>
+      <span>
+        Randers Nv
+      </span>
+    </div>
+  </div>
+</div>
+`;

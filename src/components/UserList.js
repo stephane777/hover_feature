@@ -3,7 +3,7 @@ import { withHover } from "./withHover";
 
 const UserList = ({ data, hover }) => {
 	// const [hover, setHover] = React.useState(false);
-	const [position, setPosition] = React.useState({ top: 0, left: 0 });
+	const [position, setPosition] = React.useState({ top: 10, left: 10 });
 	const {
 		name: { title, first, last },
 		location,
@@ -16,7 +16,10 @@ const UserList = ({ data, hover }) => {
 
 	React.useEffect(() => {
 		const userElement = document.getElementById(uuid);
-		const { offsetTop, offsetLeft } = userElement;
+		const { offsetTop, offsetLeft } = userElement || {
+			offsetTop: 10,
+			offsetLeft: 10,
+		};
 		setTimeout(() => {
 			setPosition({ top: userElement.offsetTop, left: userElement.offsetLeft });
 		}, 1000);
@@ -43,11 +46,11 @@ const UserList = ({ data, hover }) => {
 				{last}
 			</span>
 			{hover && (
-				<div className="tooltip" style={tooltipStyle}>
+				<div data-testid="tooltip" className="tooltip" style={tooltipStyle}>
 					<div className="tooltip__arrow"></div>
 					<span className="tooltip__title">{`${title} ${first} ${last}`}</span>
-					<span className="tooltip__first">{`${street.number} ${street.name}`}</span>
-					<span className="tooltip__last">{city}</span>
+					<span className="tooltip__street">{`${street.number} ${street.name}`}</span>
+					<span className="tooltip__city">{city}</span>
 				</div>
 			)}
 		</div>

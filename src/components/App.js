@@ -1,6 +1,24 @@
 import React, { useEffect, useState } from "react";
 import Users from "./Users";
-// import Users from "./Users";
+import axios from "axios";
+
+const API = `https://randomuser.me/api/`;
+const param = `?results=`;
+const totalUsers = "20";
+export const URL = `${API}${param}${totalUsers}`;
+
+const getUsers = (URL, setUsers, setLoading, setError) => {
+	axios
+		.get(URL)
+		.then((res) => {
+			setUsers(res.data.results);
+			setLoading(false);
+		})
+		.catch((error) => {
+			setError(error);
+			setLoading(false);
+		});
+};
 
 export default function App() {
 	const [users, setUsers] = useState("");
@@ -8,28 +26,10 @@ export default function App() {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState("");
 
+	// console.log(...getUserParam);
 	useEffect(() => {
 		setLoading(true);
-		fetch("https://randomuser.me/api/?results=20")
-			.then((response) => response.json())
-			.then((res) => {
-				setUsers(res.results);
-				console.log(res);
-
-				return res;
-			})
-			.catch((error) => {
-				console.log(`error: ${error.toString()}`);
-				setError(error.toString());
-			})
-			.finally((list) => {
-				setLoading(false);
-				// console.group("useEffect finally");
-				// console.groupEnd("");
-			});
-		return () => {
-			console.log(`UseEffect cleanup`);
-		};
+		getUsers(URL, setUsers, setLoading, setError);
 	}, []);
 	const userWrapper = {
 		display: "flex",
@@ -37,7 +37,7 @@ export default function App() {
 		flexDirection: route === "userList" ? "column" : "row",
 		justifyContent: "space-between",
 		alignItems: "space-around",
-		maxWidth: "44rem",
+		maxWidth: route === "userList" ? "36rem" : "75rem",
 		margin: "0 auto",
 	};
 
@@ -47,8 +47,10 @@ export default function App() {
 
 	return (
 		<div className="App">
-			<h1>Users with tooltip</h1>
-			<div className="menu">
+			<h1 className="u-margin-top-large u-margin-bottom-medium ">
+				Users with tooltip
+			</h1>
+			<div className="menu u-margin-bottom-medium">
 				<div className="menu__link">
 					<a href="#" onClick={toggleUI}>
 						{route === "userList" ? "Card" : "List"}
@@ -58,7 +60,7 @@ export default function App() {
 			{loading && <p>Loading...</p>}
 			{error && <p>Error: {error}</p>}
 			{users && (
-				<div style={userWrapper}>
+				<div data-testid={route} style={userWrapper}>
 					<Users users={users} route={route} />
 				</div>
 			)}
