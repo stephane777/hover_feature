@@ -1,5 +1,5 @@
 import React from "react";
-import Users from "../Users";
+import Users from "../components/Users";
 import { render, screen, within } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import renderer, { act } from "react-test-renderer";

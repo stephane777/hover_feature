@@ -81,13 +81,15 @@ module.exports = {
 	// ],
 
 	// A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-	// moduleNameMapper: {},
+	moduleNameMapper: {
+		"\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js",
+	},
 
 	// An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
 	// modulePathIgnorePatterns: [],
 
 	// Activates notifications for test results
-	// notify: false,
+	notify: true,
 
 	// An enum that specifies notification mode. Requires { notify: true }
 	// notifyMode: "failure-change",
@@ -172,7 +174,7 @@ module.exports = {
 	// timers: "real",
 
 	// A map from regular expressions to paths to transformers
-	// transform: undefined,
+	// transform: {},
 
 	// An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
 	// transformIgnorePatterns: [
@@ -184,7 +186,7 @@ module.exports = {
 	// unmockedModulePathPatterns: undefined,
 
 	// Indicates whether each individual test should be reported during the run
-	// verbose: undefined,
+	// verbose: true,
 
 	// An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
 	// watchPathIgnorePatterns: [],

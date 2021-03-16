@@ -242,12 +242,11 @@ Array [
 exports[`test User component Snapshot testing should match snapshot with userList 1`] = `
 Array [
   <div
-    className=""
+    className="userList"
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
     <div
-      className="userList"
       id="488edda9-f042-434f-8162-e4dddf7055f5"
     >
       <img
@@ -255,7 +254,7 @@ Array [
         src="https://randomuser.me/api/portraits/thumb/women/78.jpg"
       />
       <span
-        className="user__title"
+        className="userList__title"
         style={
           Object {
             "fontSize": "12px",
@@ -265,7 +264,7 @@ Array [
         Mrs
       </span>
       <span
-        className="user__first"
+        className="userList__first"
         style={
           Object {
             "fontSize": "12px",
@@ -275,7 +274,7 @@ Array [
         Emily
       </span>
       <span
-        className="user__last"
+        className="userList__last"
         style={
           Object {
             "fontSize": "12px",
@@ -287,12 +286,11 @@ Array [
     </div>
   </div>,
   <div
-    className=""
+    className="userList"
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
     <div
-      className="userList"
       id="bdc71f4e-e874-4575-96b5-5cfc6959458e"
     >
       <img
@@ -300,7 +298,7 @@ Array [
         src="https://randomuser.me/api/portraits/thumb/women/9.jpg"
       />
       <span
-        className="user__title"
+        className="userList__title"
         style={
           Object {
             "fontSize": "12px",
@@ -310,7 +308,7 @@ Array [
         Miss
       </span>
       <span
-        className="user__first"
+        className="userList__first"
         style={
           Object {
             "fontSize": "12px",
@@ -320,7 +318,7 @@ Array [
         Nurdan
       </span>
       <span
-        className="user__last"
+        className="userList__last"
         style={
           Object {
             "fontSize": "12px",

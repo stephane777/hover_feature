@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import TestRenderer, { act } from "react-test-renderer";
-import UserList from "../UserList";
+import UserList from "../components/UserList";
 
 const hover = false;
 const data = {

@@ -24,7 +24,9 @@ export function withHover(UserComponent) {
 			};
 			return (
 				<div
-					className={UserComponent.name === "UserCard" ? "userCard" : ""}
+					className={
+						UserComponent.name === "UserCard" ? "userCard" : "userList"
+					}
 					// className="toto"
 					onMouseLeave={this.handleMouseLeave}
 					onMouseEnter={this.handleMouseEnter}

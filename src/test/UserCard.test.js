@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import TestRenderer, { act } from "react-test-renderer";
-import UserCard from "../UserCard";
+import UserCard from "../components/UserCard";
 
 const hover = false;
 const data = {

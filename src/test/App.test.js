@@ -9,7 +9,7 @@ import {
 } from "@testing-library/react";
 // import TestRenderer, { act } from "react-test-renderer";
 import "@testing-library/jest-dom";
-import App from "../App";
+import App from "../components/App";
 import { twoUsers } from "./utils";
 
 jest.mock("axios");

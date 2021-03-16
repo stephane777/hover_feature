@@ -21,8 +21,8 @@ html {
 }
 body {
 	box-sizing: border-box;
-	background-color: var(--color-grey-light-1);
-	font-family: var(--open-sans);
+	// background-color: var(--color-quaternary);
+	font-family: var(--Poppins);
 	// @include respond(tab-port) {
 	// 	padding: 0;
 	// }
@@ -34,4 +34,5 @@ body {
 }
 h1 {
 	font-size: 3rem;
+	font-family: var(--poppins);
 }

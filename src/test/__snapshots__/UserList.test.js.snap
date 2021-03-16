@@ -2,12 +2,11 @@
 
 exports[`test SNAPSHOT should match snapshot for hover true 1`] = `
 <div
-  className=""
+  className="userList"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
   <div
-    className="userList"
     id="488edda9-f042-434f-8162-e4dddf7055f5"
   >
     <img
@@ -15,7 +14,7 @@ exports[`test SNAPSHOT should match snapshot for hover true 1`] = `
       src="https://randomuser.me/api/portraits/thumb/women/78.jpg"
     />
     <span
-      className="user__title"
+      className="userList__title"
       style={
         Object {
           "fontSize": "12px",
@@ -25,7 +24,7 @@ exports[`test SNAPSHOT should match snapshot for hover true 1`] = `
       Mrs
     </span>
     <span
-      className="user__first"
+      className="userList__first"
       style={
         Object {
           "fontSize": "12px",
@@ -35,7 +34,7 @@ exports[`test SNAPSHOT should match snapshot for hover true 1`] = `
       Emily
     </span>
     <span
-      className="user__last"
+      className="userList__last"
       style={
         Object {
           "fontSize": "12px",
@@ -80,12 +79,11 @@ exports[`test SNAPSHOT should match snapshot for hover true 1`] = `
 
 exports[`test SNAPSHOT should match the snapshot for hover false 1`] = `
 <div
-  className=""
+  className="userList"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
   <div
-    className="userList"
     id="488edda9-f042-434f-8162-e4dddf7055f5"
   >
     <img
@@ -93,7 +91,7 @@ exports[`test SNAPSHOT should match the snapshot for hover false 1`] = `
       src="https://randomuser.me/api/portraits/thumb/women/78.jpg"
     />
     <span
-      className="user__title"
+      className="userList__title"
       style={
         Object {
           "fontSize": "12px",
@@ -103,7 +101,7 @@ exports[`test SNAPSHOT should match the snapshot for hover false 1`] = `
       Mrs
     </span>
     <span
-      className="user__first"
+      className="userList__first"
       style={
         Object {
           "fontSize": "12px",
@@ -113,7 +111,7 @@ exports[`test SNAPSHOT should match the snapshot for hover false 1`] = `
       Emily
     </span>
     <span
-      className="user__last"
+      className="userList__last"
       style={
         Object {
           "fontSize": "12px",
