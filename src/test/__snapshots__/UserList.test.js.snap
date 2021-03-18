@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test SNAPSHOT should match snapshot for hover true 1`] = `
+<div
+  className="userList"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <div
+    id="488edda9-f042-434f-8162-e4dddf7055f5"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  >
+    <img
+      alt="Mrs Emily Mortensen"
+      src="https://randomuser.me/api/portraits/thumb/women/78.jpg"
+    />
+    <span
+      className="userList__title"
+      style={
+        Object {
+          "fontSize": "12px",
+        }
+      }
+    >
+      Mrs
+    </span>
+    <span
+      className="userList__first"
+      style={
+        Object {
+          "fontSize": "12px",
+        }
+      }
+    >
+      Emily
+    </span>
+    <span
+      className="userList__last"
+      style={
+        Object {
+          "fontSize": "12px",
+          "marginRight": "auto",
+        }
+      }
+    >
+      Mortensen
+    </span>
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Edit
+    </button>
+    <div
+      className="userTooltip"
+      data-testid="userTooltip"
+      style={
+        Object {
+          "left": "10px",
+          "position": "absolute",
+          "top": "62px",
+        }
+      }
+    >
+      <div
+        className="userTooltip__arrow"
+      />
+      <span
+        className="userTooltip__content"
+      >
+        Mrs Emily Mortensen
+      </span>
+      <span
+        className="userTooltip__content"
+      >
+        31
+        yo
+      </span>
+      <span
+        className="userTooltip__content"
+      >
+        94033936
+      </span>
+      <span
+        className="userTooltip__content"
+      >
+        emily.mortensen@example.com
+      </span>
+      <span
+        className="userTooltip__content"
+      >
+        8651 Tingstedet
+      </span>
+      <span
+        className="userTooltip__content"
+      >
+        Randers Nv
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test SNAPSHOT should match the snapshot for hover false 1`] = `
+<div
+  className="userList"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <div
+    id="488edda9-f042-434f-8162-e4dddf7055f5"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  >
+    <img
+      alt="Mrs Emily Mortensen"
+      src="https://randomuser.me/api/portraits/thumb/women/78.jpg"
+    />
+    <span
+      className="userList__title"
+      style={
+        Object {
+          "fontSize": "12px",
+        }
+      }
+    >
+      Mrs
+    </span>
+    <span
+      className="userList__first"
+      style={
+        Object {
+          "fontSize": "12px",
+        }
+      }
+    >
+      Emily
+    </span>
+    <span
+      className="userList__last"
+      style={
+        Object {
+          "fontSize": "12px",
+          "marginRight": "auto",
+        }
+      }
+    >
+      Mortensen
+    </span>
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Edit
+    </button>
+  </div>
+</div>
+`;
