@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import {
 	Form,
@@ -39,6 +40,7 @@ const UserForm = ({ user, dispatch }) => {
 		{ name: "Female", value: "female" },
 	];
 	const gender = title === "Mr" ? "male" : "female";
+
 	const handleSubmit = (event) => {
 		const form = event.currentTarget;
 		event.preventDefault();
@@ -72,7 +74,7 @@ const UserForm = ({ user, dispatch }) => {
 		});
 	};
 	return (
-		<div className="userForm">
+		<div className="userForm" data-testid="userForm">
 			<h1>{`${title} ${first} ${last}`}</h1>
 			<Form noValidate onSubmit={handleSubmit} validated={validated}>
 				<Form.Group
@@ -233,73 +235,79 @@ const UserForm = ({ user, dispatch }) => {
 					</Col>
 				</Form.Group>
 
-				<Form.Group
-					as={Row}
-					controlId="formNumberStreet"
-					className="justify-content-sm-center row_clear_margin"
-				>
+				<Row className="justify-content-sm-center row_clear_margin">
 					<Col sm={1} />
 					<Col sm={1}>
-						<Form.Label>Number</Form.Label>
-						<Form.Control
-							value={userNumStreet}
-							onChange={(e) => setUserNumStreet(e.target.value)}
-							size="lg"
-							type="text"
-							required
-						/>
-						<Form.Control.Feedback type="invalid">
-							Please provide the street number.
-						</Form.Control.Feedback>
+						<Form.Group controlId="formStreetNumber">
+							<Form.Label>Number</Form.Label>
+							<Form.Control
+								value={userNumStreet}
+								onChange={(e) => setUserNumStreet(e.target.value)}
+								size="lg"
+								type="text"
+								required
+							/>
+							<Form.Control.Feedback type="invalid">
+								Please provide the street number.
+							</Form.Control.Feedback>
+						</Form.Group>
 					</Col>
 					<Col sm={3}>
-						<Form.Label>Street Name</Form.Label>
-						<Form.Control
-							size="lg"
-							type="text"
-							value={userStreetName}
-							onChange={(e) => setUserStreetName(e.target.value)}
-							required
-						/>
-						<Form.Control.Feedback type="invalid">
-							Please provide the street name.
-						</Form.Control.Feedback>
+						<Form.Group controlId="formStreetName">
+							<Form.Label>Street Name</Form.Label>
+							<Form.Control
+								size="lg"
+								type="text"
+								value={userStreetName}
+								onChange={(e) => setUserStreetName(e.target.value)}
+								required
+							/>
+							<Form.Control.Feedback type="invalid">
+								Please provide the street name.
+							</Form.Control.Feedback>
+						</Form.Group>
 					</Col>
-				</Form.Group>
+				</Row>
 
-				<Form.Group
+				{/* <Form.Group
 					as={Row}
 					controlId="formPostCodeCountry"
 					className="justify-content-sm-center row_clear_margin"
-				>
+				> */}
+				<Row className="justify-content-sm-center row_clear_margin">
 					<Form.Label column sm={1}></Form.Label>
 					<Col sm={1}>
-						<Form.Label>Postcode</Form.Label>
-						<Form.Control
-							value={userPostcode}
-							onChange={(e) => setUserPostcode(e.target.value)}
-							size="lg"
-							type="text"
-							required
-						/>
-						<Form.Control.Feedback type="invalid">
-							Please provide the postcode.
-						</Form.Control.Feedback>
+						<Form.Group controlId="formPostcode">
+							<Form.Label>Postcode</Form.Label>
+							<Form.Control
+								value={userPostcode}
+								onChange={(e) => setUserPostcode(e.target.value)}
+								size="lg"
+								type="text"
+								required
+							/>
+							<Form.Control.Feedback type="invalid">
+								Please provide the postcode.
+							</Form.Control.Feedback>
+						</Form.Group>
 					</Col>
 					<Col sm={3}>
-						<Form.Label>City</Form.Label>
-						<Form.Control
-							size="lg"
-							type="text"
-							value={userCity}
-							onChange={(e) => setUserCity(e.target.value)}
-							required
-						/>
-						<Form.Control.Feedback type="invalid">
-							Please provide the City.
-						</Form.Control.Feedback>
+						<Form.Group controlId="formCity">
+							<Form.Label>City</Form.Label>
+							<Form.Control
+								size="lg"
+								type="text"
+								value={userCity}
+								onChange={(e) => setUserCity(e.target.value)}
+								required
+							/>
+							<Form.Control.Feedback type="invalid">
+								Please provide the City.
+							</Form.Control.Feedback>
+						</Form.Group>
 					</Col>
-				</Form.Group>
+				</Row>
+
 				<Row className="justify-content-sm-center row_clear_margin">
 					<Button
 						variant="primary"
@@ -314,4 +322,22 @@ const UserForm = ({ user, dispatch }) => {
 		</div>
 	);
 };
+
+UserForm.propTypes = {
+	dispatch: PropTypes.func.isRequired,
+	user: PropTypes.shape({
+		cell: PropTypes.string,
+		dob: PropTypes.object,
+		email: PropTypes.string,
+		gender: PropTypes.string,
+		id: PropTypes.object,
+		location: PropTypes.object,
+		login: PropTypes.object,
+		name: PropTypes.object,
+		nat: PropTypes.string,
+		phone: PropTypes.string,
+		picture: PropTypes.object,
+	}),
+};
+
 export default UserForm;

@@ -23,99 +23,66 @@ Array [
       }
     >
       <div
-        className="userCard__header u-margin-bottom-medium"
+        className="userCard__header"
       >
-        <img
-          alt="Mrs Emily Mortensen"
-          src="https://randomuser.me/api/portraits/thumb/women/78.jpg"
-        />
-        <span
-          className="user__title"
+        <div
+          className="userCard__header_img"
         >
-          Mrs
-        </span>
-        <span
-          className="user__first"
+          <img
+            alt="Mrs Emily Mortensen"
+            src="https://randomuser.me/api/portraits/thumb/women/78.jpg"
+          />
+        </div>
+        <div
+          className="userCard__header_details"
         >
-          Emily
-        </span>
-        <span
-          className="user__last"
-        >
-          Mortensen
-        </span>
+          <div>
+            <span
+              className="userCard__title"
+            >
+              Mrs Emily Mortensen 31
+            </span>
+          </div>
+          <div
+            className="bold"
+          >
+            <span>
+              blackwolf380
+            </span>
+          </div>
+          <div>
+            <span>
+              emily.mortensen@example.com
+            </span>
+          </div>
+          <div>
+            <span>
+              94033936
+            </span>
+          </div>
+          <div>
+            <span>
+              92381351
+            </span>
+          </div>
+        </div>
       </div>
       <div
-        className="u-margin-bottom-medium"
+        className="userCard__more"
       >
-        <span
-          className="bold"
+        <button
+          className="btn btn-primary"
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+          type="button"
         >
-          Age: 
-        </span>
-        <span>
-          31
-        </span>
-      </div>
-      <div
-        className="u-margin-bottom-medium"
-      >
-        <span
-          className="bold"
-        >
-          email: 
-        </span>
-        <span>
-          emily.mortensen@example.com
-        </span>
-      </div>
-      <div
-        className="u-margin-bottom-medium"
-      >
-        <span
-          className="bold"
-        >
-          Phone: 
-        </span>
-        <span>
-          94033936
-        </span>
-      </div>
-      <div
-        className="u-margin-bottom-medium"
-      >
-        <span
-          className="bold"
-        >
-          Street: 
-        </span>
-        <span>
-          8651 Tingstedet
-        </span>
-      </div>
-      <div
-        className="u-margin-bottom-medium"
-      >
-        <span
-          className="bold"
-        >
-          Postcode: 
-        </span>
-        <span>
-          98755
-        </span>
-      </div>
-      <div
-        className="u-margin-bottom-medium"
-      >
-        <span
-          className="bold"
-        >
-          City: 
-        </span>
-        <span>
-          Randers Nv
-        </span>
+          Load more
+        </button>
       </div>
     </div>
   </div>,
@@ -140,99 +107,66 @@ Array [
       }
     >
       <div
-        className="userCard__header u-margin-bottom-medium"
+        className="userCard__header"
       >
-        <img
-          alt="Miss Nurdan Tazegül"
-          src="https://randomuser.me/api/portraits/thumb/women/9.jpg"
-        />
-        <span
-          className="user__title"
+        <div
+          className="userCard__header_img"
         >
-          Miss
-        </span>
-        <span
-          className="user__first"
+          <img
+            alt="Miss Nurdan Tazegül"
+            src="https://randomuser.me/api/portraits/thumb/women/9.jpg"
+          />
+        </div>
+        <div
+          className="userCard__header_details"
         >
-          Nurdan
-        </span>
-        <span
-          className="user__last"
-        >
-          Tazegül
-        </span>
+          <div>
+            <span
+              className="userCard__title"
+            >
+              Miss Nurdan Tazegül 31
+            </span>
+          </div>
+          <div
+            className="bold"
+          >
+            <span>
+              bigdog994
+            </span>
+          </div>
+          <div>
+            <span>
+              nurdan.tazegul@example.com
+            </span>
+          </div>
+          <div>
+            <span>
+              (012)-335-1433
+            </span>
+          </div>
+          <div>
+            <span>
+              (010)-927-6700
+            </span>
+          </div>
+        </div>
       </div>
       <div
-        className="u-margin-bottom-medium"
+        className="userCard__more"
       >
-        <span
-          className="bold"
+        <button
+          className="btn btn-primary"
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+          type="button"
         >
-          Age: 
-        </span>
-        <span>
-          31
-        </span>
-      </div>
-      <div
-        className="u-margin-bottom-medium"
-      >
-        <span
-          className="bold"
-        >
-          email: 
-        </span>
-        <span>
-          nurdan.tazegul@example.com
-        </span>
-      </div>
-      <div
-        className="u-margin-bottom-medium"
-      >
-        <span
-          className="bold"
-        >
-          Phone: 
-        </span>
-        <span>
-          (012)-335-1433
-        </span>
-      </div>
-      <div
-        className="u-margin-bottom-medium"
-      >
-        <span
-          className="bold"
-        >
-          Street: 
-        </span>
-        <span>
-          6949 Şehitler Cd
-        </span>
-      </div>
-      <div
-        className="u-margin-bottom-medium"
-      >
-        <span
-          className="bold"
-        >
-          Postcode: 
-        </span>
-        <span>
-          91771
-        </span>
-      </div>
-      <div
-        className="u-margin-bottom-medium"
-      >
-        <span
-          className="bold"
-        >
-          City: 
-        </span>
-        <span>
-          Balıkesir
-        </span>
+          Load more
+        </button>
       </div>
     </div>
   </div>,
@@ -248,6 +182,11 @@ Array [
   >
     <div
       id="488edda9-f042-434f-8162-e4dddf7055f5"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
     >
       <img
         alt="Mrs Emily Mortensen"
@@ -278,11 +217,20 @@ Array [
         style={
           Object {
             "fontSize": "12px",
+            "marginRight": "auto",
           }
         }
       >
         Mortensen
       </span>
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Edit
+      </button>
     </div>
   </div>,
   <div
@@ -292,6 +240,11 @@ Array [
   >
     <div
       id="bdc71f4e-e874-4575-96b5-5cfc6959458e"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
     >
       <img
         alt="Miss Nurdan Tazegül"
@@ -322,11 +275,20 @@ Array [
         style={
           Object {
             "fontSize": "12px",
+            "marginRight": "auto",
           }
         }
       >
         Tazegül
       </span>
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Edit
+      </button>
     </div>
   </div>,
 ]

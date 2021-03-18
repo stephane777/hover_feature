@@ -22,103 +22,70 @@ exports[`test SNAPSHOT should match snapshot for hover true 1`] = `
     }
   >
     <div
-      className="userCard__header u-margin-bottom-medium"
+      className="userCard__header"
     >
-      <img
-        alt="Mrs Emily Mortensen"
-        src="https://randomuser.me/api/portraits/thumb/women/78.jpg"
-      />
-      <span
-        className="user__title"
+      <div
+        className="userCard__header_img"
       >
-        Mrs
-      </span>
-      <span
-        className="user__first"
+        <img
+          alt="Mrs Emily Mortensen"
+          src="https://randomuser.me/api/portraits/thumb/women/78.jpg"
+        />
+      </div>
+      <div
+        className="userCard__header_details"
       >
-        Emily
-      </span>
-      <span
-        className="user__last"
-      >
-        Mortensen
-      </span>
+        <div>
+          <span
+            className="userCard__title"
+          >
+            Mrs Emily Mortensen 31
+          </span>
+        </div>
+        <div
+          className="bold"
+        >
+          <span>
+            blackwolf380
+          </span>
+        </div>
+        <div>
+          <span>
+            emily.mortensen@example.com
+          </span>
+        </div>
+        <div>
+          <span>
+            94033936
+          </span>
+        </div>
+        <div>
+          <span>
+            92381351
+          </span>
+        </div>
+      </div>
     </div>
     <div
-      className="u-margin-bottom-medium"
+      className="userCard__more"
     >
-      <span
-        className="bold"
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+        type="button"
       >
-        Age: 
-      </span>
-      <span>
-        31
-      </span>
+        Load more
+      </button>
     </div>
     <div
-      className="u-margin-bottom-medium"
-    >
-      <span
-        className="bold"
-      >
-        email: 
-      </span>
-      <span>
-        emily.mortensen@example.com
-      </span>
-    </div>
-    <div
-      className="u-margin-bottom-medium"
-    >
-      <span
-        className="bold"
-      >
-        Phone: 
-      </span>
-      <span>
-        94033936
-      </span>
-    </div>
-    <div
-      className="u-margin-bottom-medium"
-    >
-      <span
-        className="bold"
-      >
-        Street: 
-      </span>
-      <span>
-        8651 Tingstedet
-      </span>
-    </div>
-    <div
-      className="u-margin-bottom-medium"
-    >
-      <span
-        className="bold"
-      >
-        Postcode: 
-      </span>
-      <span>
-        98755
-      </span>
-    </div>
-    <div
-      className="u-margin-bottom-medium"
-    >
-      <span
-        className="bold"
-      >
-        City: 
-      </span>
-      <span>
-        Randers Nv
-      </span>
-    </div>
-    <div
-      className="tooltip"
-      data-testid="tooltip"
+      className="userTooltip"
+      data-testid="userTooltip"
       style={
         Object {
           "left": "0",
@@ -128,22 +95,23 @@ exports[`test SNAPSHOT should match snapshot for hover true 1`] = `
       }
     >
       <div
-        className="tooltip__arrow"
+        className="userTooltip__arrow"
       />
       <span
-        className="tooltip__title"
-      >
-        Mrs Emily Mortensen
-      </span>
-      <span
-        className="tooltip__street"
+        className="userTooltip__content"
       >
         8651 Tingstedet
       </span>
       <span
-        className="tooltip__city"
+        className="userTooltip__content"
       >
-        Randers Nv
+        98755 Randers Nv Denmark
+      </span>
+      <span
+        className="userTooltip__content"
+      >
+        Registered date :
+        2017-05-09T01:55:53.657Z
       </span>
     </div>
   </div>
@@ -172,99 +140,66 @@ exports[`test SNAPSHOT should match the snapshot for hover false 1`] = `
     }
   >
     <div
-      className="userCard__header u-margin-bottom-medium"
+      className="userCard__header"
     >
-      <img
-        alt="Mrs Emily Mortensen"
-        src="https://randomuser.me/api/portraits/thumb/women/78.jpg"
-      />
-      <span
-        className="user__title"
+      <div
+        className="userCard__header_img"
       >
-        Mrs
-      </span>
-      <span
-        className="user__first"
+        <img
+          alt="Mrs Emily Mortensen"
+          src="https://randomuser.me/api/portraits/thumb/women/78.jpg"
+        />
+      </div>
+      <div
+        className="userCard__header_details"
       >
-        Emily
-      </span>
-      <span
-        className="user__last"
-      >
-        Mortensen
-      </span>
+        <div>
+          <span
+            className="userCard__title"
+          >
+            Mrs Emily Mortensen 31
+          </span>
+        </div>
+        <div
+          className="bold"
+        >
+          <span>
+            blackwolf380
+          </span>
+        </div>
+        <div>
+          <span>
+            emily.mortensen@example.com
+          </span>
+        </div>
+        <div>
+          <span>
+            94033936
+          </span>
+        </div>
+        <div>
+          <span>
+            92381351
+          </span>
+        </div>
+      </div>
     </div>
     <div
-      className="u-margin-bottom-medium"
+      className="userCard__more"
     >
-      <span
-        className="bold"
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+        type="button"
       >
-        Age: 
-      </span>
-      <span>
-        31
-      </span>
-    </div>
-    <div
-      className="u-margin-bottom-medium"
-    >
-      <span
-        className="bold"
-      >
-        email: 
-      </span>
-      <span>
-        emily.mortensen@example.com
-      </span>
-    </div>
-    <div
-      className="u-margin-bottom-medium"
-    >
-      <span
-        className="bold"
-      >
-        Phone: 
-      </span>
-      <span>
-        94033936
-      </span>
-    </div>
-    <div
-      className="u-margin-bottom-medium"
-    >
-      <span
-        className="bold"
-      >
-        Street: 
-      </span>
-      <span>
-        8651 Tingstedet
-      </span>
-    </div>
-    <div
-      className="u-margin-bottom-medium"
-    >
-      <span
-        className="bold"
-      >
-        Postcode: 
-      </span>
-      <span>
-        98755
-      </span>
-    </div>
-    <div
-      className="u-margin-bottom-medium"
-    >
-      <span
-        className="bold"
-      >
-        City: 
-      </span>
-      <span>
-        Randers Nv
-      </span>
+        Load more
+      </button>
     </div>
   </div>
 </div>

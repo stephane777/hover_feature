@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, within, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import TestRenderer, { act } from "react-test-renderer";
 import UserCard from "../components/UserCard";
@@ -78,14 +78,14 @@ describe("test UserCard component with hover false", () => {
 		expect(screen.getByAltText("Mrs Emily Mortensen"));
 		expect(screen.getByRole("img")).toBeInTheDocument();
 	});
-	it("should show Age, email, Phone, street, postcode and city", () => {
+	it("should show Gender, firstname, lastname, login, email, Phone and Cell", () => {
 		render(<UserCard {...props} />);
-		expect(screen.getByText("Age:")).toBeInTheDocument();
-		expect(screen.getByText("email:")).toBeInTheDocument();
-		expect(screen.getByText("Phone:")).toBeInTheDocument();
-		expect(screen.getByText("Street:")).toBeInTheDocument();
-		expect(screen.getByText("City:")).toBeInTheDocument();
-		expect(screen.getByText("Postcode:")).toBeInTheDocument();
+		expect(screen.getByText("Mrs Emily Mortensen 31")).toBeInTheDocument();
+		expect(screen.getByText("blackwolf380"));
+		expect(screen.getByText("emily.mortensen@example.com")).toBeInTheDocument();
+		expect(screen.getByText("94033936")).toBeInTheDocument();
+		expect(screen.getByText("92381351")).toBeInTheDocument();
+		expect(screen.getByText(/Load more/)).toBeInTheDocument();
 	});
 	it("shouldn't show the tooltip if not hovered", () => {
 		props = {
@@ -103,19 +103,46 @@ describe("test UserCard component with hover true", () => {
 		};
 
 		render(<UserCard {...props} />);
-		// screen.debug();
-		expect(screen.getByTestId("tooltip")).toBeInTheDocument();
+		expect(screen.getByText(/Load more/)).toBeInTheDocument();
+		expect(screen.getByTestId("userTooltip")).toBeInTheDocument();
+
+		const tooltipNode = document.querySelector(".userTooltip");
+		const utils = within(tooltipNode);
+
+		expect(utils.queryByText("Mrs Emily Mortensen 31")).toBeNull();
+		expect(utils.getByText("8651 Tingstedet")).toBeInTheDocument();
+		expect(utils.getByText("98755 Randers Nv Denmark")).toBeInTheDocument();
+		expect(
+			utils.getByText("Registered date :2017-05-09T01:55:53.657Z")
+		).toBeInTheDocument();
 	});
-	it("should display the TOOLTIP with title, Street and City in the  hover", () => {
+});
+
+describe("Load more should display more data, remove the button and no tooltip", () => {
+	it("should load more ", () => {
+		props = {
+			...props,
+			hover: false,
+		};
+		const { rerender } = render(<UserCard {...props} />);
+		expect(screen.getByText(/Load more/)).toBeInTheDocument();
+		fireEvent.click(screen.getByText(/Load more/));
+		expect(screen.queryByText(/Load more/)).toBeNull();
+
+		expect(screen.getByText(/8651 Tingstedet/)).toBeInTheDocument();
+		expect(screen.getByText(/98755 Randers Nv Denmark/)).toBeInTheDocument();
+		expect(
+			screen.getByText(/Timezone: Tokyo, Seoul, Osaka, Sapporo, Yakutsk/)
+		).toBeInTheDocument();
+		expect(
+			screen.getByText(/Registered: 2017-05-09T01:55:53.657Z/)
+		).toBeInTheDocument();
 		props = {
 			...props,
 			hover: true,
 		};
-		render(<UserCard {...props} />);
-		// screen.debug();
-		expect(screen.getByText("Mrs Emily Mortensen")).toBeInTheDocument();
-		expect(screen.getAllByText("8651 Tingstedet")).toHaveLength(2);
-		expect(screen.getAllByText("Randers Nv")).toHaveLength(2);
+		rerender(<UserCard {...props} />);
+		expect(screen.queryByTestId(/userTooltip/)).toBeNull();
 	});
 });
 

@@ -6,26 +6,30 @@ import renderer, { act } from "react-test-renderer";
 
 import { twoUsers } from "./utils";
 
-describe("test User component", () => {
+const dispatch = jest.fn();
+
+describe.only("test User component", () => {
 	it("should render the User component with default userList props", () => {
 		let mainContainer;
 		expect.assertions(1);
 		act(() => {
-			const { container } = render(<Users users={twoUsers} />);
+			const { container } = render(
+				<Users users={twoUsers} dispatch={dispatch} />
+			);
 			mainContainer = container;
 		});
-		expect(mainContainer.firstChild.firstChild.className).toBe("userList");
+		expect(mainContainer.firstChild.className).toBe("userList");
 		// expect()
 	});
 	it("should show an image, title, first and lastname", () => {
 		expect.assertions(23);
 		act(() => {
-			render(<Users users={twoUsers} />);
+			render(<Users users={twoUsers} dispatch={dispatch} />);
 		});
 		expect(screen.getAllByRole("img").length).toBe(2);
 		twoUsers.forEach(
 			({
-				login: { uuid },
+				login: { uuid, username },
 				name: { title, first, last },
 				picture: { thumbnail },
 				dob: { age },
@@ -57,22 +61,25 @@ describe("test User component", () => {
 	});
 
 	it("Should render user card: ", () => {
-		const { container } = render(<Users users={twoUsers} route="userCard" />);
+		const { container } = render(
+			<Users users={twoUsers} route="userCard" dispatch={dispatch} />
+		);
 		expect(container.firstChild.className).toBe("userCard");
 	});
 	it("should render all user details", () => {
-		expect.assertions(22);
+		// expect.assertions(16);
 		act(() => {
-			render(<Users users={twoUsers} route="userCard" />);
+			render(<Users users={twoUsers} route="userCard" dispatch={dispatch} />);
 		});
 		twoUsers.forEach(
 			({
-				login: { uuid },
+				login: { uuid, username },
 				name: { title, first, last },
 				picture: { thumbnail },
 				dob: { age },
 				email,
 				phone,
+				cell,
 				location: {
 					street: { number, name },
 					postcode,
@@ -84,16 +91,15 @@ describe("test User component", () => {
 				const img = utils.getByRole("img");
 				expect(img).toHaveAttribute("src", thumbnail);
 				expect(img).toHaveAttribute("alt", `${title} ${first} ${last}`);
-				expect(utils.getByText(title)).toBeInTheDocument();
-				expect(utils.getByText(first)).toBeInTheDocument();
-				expect(utils.getByText(last)).toBeInTheDocument();
+				expect(
+					screen.getByText(`${title} ${first} ${last} ${age}`)
+				).toBeInTheDocument();
 
-				expect(utils.getByText(age)).toBeInTheDocument();
-				expect(utils.getByText(email)).toBeInTheDocument();
-				expect(utils.getByText(phone)).toBeInTheDocument();
-				expect(utils.getByText(`${number} ${name}`)).toBeInTheDocument();
-				expect(utils.getByText(postcode)).toBeInTheDocument();
-				expect(utils.getByText(city)).toBeInTheDocument();
+				expect(screen.getByText(username));
+				expect(screen.getByText(email)).toBeInTheDocument();
+				expect(screen.getByText(phone)).toBeInTheDocument();
+				expect(screen.getByText(cell)).toBeInTheDocument();
+				expect(screen.getAllByText(/Load more/)).toHaveLength(2);
 			}
 		);
 	});
@@ -102,13 +108,15 @@ describe("test User component", () => {
 		let root;
 		it("should match snapshot with userList", async () => {
 			act(() => {
-				root = renderer.create(<Users users={twoUsers} />);
+				root = renderer.create(<Users users={twoUsers} dispatch={dispatch} />);
 			});
 			expect(await root.toJSON()).toMatchSnapshot();
 		});
 		it("should match snapshot with userCard", async () => {
 			act(() => {
-				root.update(<Users users={twoUsers} route="userCard" />);
+				root.update(
+					<Users users={twoUsers} route="userCard" dispatch={dispatch} />
+				);
 			});
 			expect(await root.toJSON()).toMatchSnapshot();
 		});

@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import TestRenderer, { act } from "react-test-renderer";
 import UserList from "../components/UserList";
@@ -62,13 +62,14 @@ const data = {
 	nat: "DK",
 };
 
-let props = { hover, data };
+const dispatch = jest.fn();
+
+let props = { hover, data, dispatch };
 
 describe("test UserList component with hover false", () => {
 	it("should render the component", () => {
 		const { container } = render(<UserList {...props} />);
-
-		expect(container.firstChild.firstChild.className).toBe("userList");
+		expect(container.firstChild.className).toBe("userList");
 	});
 	it("should show an image :", () => {
 		render(<UserList {...props} />);
@@ -94,22 +95,38 @@ describe("test UserList component with hover false", () => {
 	});
 });
 describe("test UserList component with hover true", () => {
-	it("should display the tooltip if hovered", () => {
+	it("should display the tooltip if hovered", async () => {
 		props = {
 			...props,
 			hover: true,
 		};
-
-		render(<UserList {...props} />);
-		expect(screen.getByTestId("tooltip")).toBeInTheDocument();
+		act(() => {
+			render(<UserList {...props} />);
+		});
+		await waitFor(() => {
+			expect(screen.getByTestId("userTooltip")).toBeInTheDocument();
+		});
 	});
 	it("should display the TOOLTIP with title, Street and City in the  hover", () => {
 		props = {
 			...props,
 			hover: true,
 		};
-		render(<UserList {...props} />);
+		act(() => {
+			render(<UserList {...props} />);
+		});
 		expect(screen.getByText("Mrs Emily Mortensen")).toBeInTheDocument();
+	});
+});
+
+describe("should have an edit button and display af form to update user data", () => {
+	it("should display an edit button", () => {
+		props = {
+			...props,
+			hover: false,
+		};
+		render(<UserList {...props} />);
+		expect(screen.getByText(/Edit/)).toBeInTheDocument();
 	});
 });
 

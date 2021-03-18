@@ -1,6 +1,7 @@
 import React from "react";
 import { withHover } from "./withHover";
 import { Button } from "react-bootstrap";
+import PropTypes from "prop-types";
 
 const UserList = ({ data, hover, dispatch }) => {
 	// const [hover, setHover] = React.useState(false);
@@ -59,7 +60,7 @@ const UserList = ({ data, hover, dispatch }) => {
 			<Button variant="primary" onClick={handleEditCard}>
 				Edit
 			</Button>
-			{hover && position.top > 10 && (
+			{hover && (
 				<div
 					data-testid="userTooltip"
 					className="userTooltip"
@@ -76,5 +77,23 @@ const UserList = ({ data, hover, dispatch }) => {
 			)}
 		</div>
 	);
+};
+
+UserList.propTypes = {
+	hover: PropTypes.bool.isRequired,
+	dispatch: PropTypes.func.isRequired,
+	data: PropTypes.shape({
+		cell: PropTypes.string,
+		dob: PropTypes.object,
+		email: PropTypes.string,
+		gender: PropTypes.string,
+		id: PropTypes.object,
+		location: PropTypes.object,
+		login: PropTypes.object,
+		name: PropTypes.object,
+		nat: PropTypes.string,
+		phone: PropTypes.string,
+		picture: PropTypes.object,
+	}),
 };
 export default withHover(UserList);

@@ -122,19 +122,12 @@ const reducer = (state, action) => {
 export default function App() {
 	const [appState, dispatch] = React.useReducer(reducer, initialState);
 	const { users, loading, error, route } = appState;
-	// console.log(...getUserParam);
 	useEffect(() => {
 		dispatch({ type: "START_LOADING" });
-		// console.warn(`App re-render!`);
-		// console.log(`appState.users.length: ${appState.users.length}`);
 		appState.users.length === 0
 			? getUsersAndStoreLocalStorage(URL, dispatch)
 			: null;
 	}, []);
-
-	// useEffect(() => {
-	// 	console.log(appState);
-	// }, [appState]);
 
 	const userWrapper = {
 		display: "flex",
@@ -154,9 +147,9 @@ export default function App() {
 
 	const editCardUI = (user) => {
 		// console.log(user);
-		const {
-			name: { title, first, last },
-		} = user;
+		// const {
+		// 	name: { title, first, last },
+		// } = user;
 		return (
 			<React.Fragment>
 				<UserForm user={user} dispatch={dispatch} />

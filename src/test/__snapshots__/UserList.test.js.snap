@@ -8,6 +8,11 @@ exports[`test SNAPSHOT should match snapshot for hover true 1`] = `
 >
   <div
     id="488edda9-f042-434f-8162-e4dddf7055f5"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
   >
     <img
       alt="Mrs Emily Mortensen"
@@ -38,14 +43,23 @@ exports[`test SNAPSHOT should match snapshot for hover true 1`] = `
       style={
         Object {
           "fontSize": "12px",
+          "marginRight": "auto",
         }
       }
     >
       Mortensen
     </span>
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Edit
+    </button>
     <div
-      className="tooltip"
-      data-testid="tooltip"
+      className="userTooltip"
+      data-testid="userTooltip"
       style={
         Object {
           "left": "10px",
@@ -55,20 +69,36 @@ exports[`test SNAPSHOT should match snapshot for hover true 1`] = `
       }
     >
       <div
-        className="tooltip__arrow"
+        className="userTooltip__arrow"
       />
       <span
-        className="tooltip__title"
+        className="userTooltip__content"
       >
         Mrs Emily Mortensen
       </span>
       <span
-        className="tooltip__street"
+        className="userTooltip__content"
+      >
+        31
+        yo
+      </span>
+      <span
+        className="userTooltip__content"
+      >
+        94033936
+      </span>
+      <span
+        className="userTooltip__content"
+      >
+        emily.mortensen@example.com
+      </span>
+      <span
+        className="userTooltip__content"
       >
         8651 Tingstedet
       </span>
       <span
-        className="tooltip__city"
+        className="userTooltip__content"
       >
         Randers Nv
       </span>
@@ -85,6 +115,11 @@ exports[`test SNAPSHOT should match the snapshot for hover false 1`] = `
 >
   <div
     id="488edda9-f042-434f-8162-e4dddf7055f5"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
   >
     <img
       alt="Mrs Emily Mortensen"
@@ -115,11 +150,20 @@ exports[`test SNAPSHOT should match the snapshot for hover false 1`] = `
       style={
         Object {
           "fontSize": "12px",
+          "marginRight": "auto",
         }
       }
     >
       Mortensen
     </span>
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Edit
+    </button>
   </div>
 </div>
 `;

@@ -5,6 +5,7 @@ import {
 	screen,
 	fireEvent,
 	cleanup,
+	within,
 	act,
 } from "@testing-library/react";
 // import TestRenderer, { act } from "react-test-renderer";
@@ -56,6 +57,25 @@ describe("testing APP", () => {
 			fireEvent.click(screen.getByText("Card"));
 		});
 		expect(await screen.findByTestId("userCard")).toBeInTheDocument();
+		await act(() => promise);
+	});
+	it("should display the form to change the user data", async () => {
+		const promise = Promise.resolve({
+			data: {
+				results: twoUsers,
+			},
+		});
+
+		act(() => {
+			render(<App />);
+		});
+		expect(screen.getByText("Loading...")).toBeInTheDocument();
+		expect(await screen.findByTestId("userList")).toBeInTheDocument();
+		act(() => {
+			const firstUser = within(screen.getAllByText(/Edit/)[0].closest("div"));
+			fireEvent.click(firstUser.getByText("Edit"));
+		});
+		expect(await screen.findByTestId("userForm")).toBeInTheDocument();
 		await act(() => promise);
 	});
 });
